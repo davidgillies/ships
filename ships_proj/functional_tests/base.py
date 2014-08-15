@@ -1,4 +1,4 @@
-from django.test import LiveServerTestCase
+from django.test import TestCase, LiveServerTestCase
 from selenium import webdriver
 
 class FunctionalTest(LiveServerTestCase):

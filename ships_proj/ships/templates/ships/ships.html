@@ -1,6 +1,7 @@
 {% extends 'ships/base.html' %}
 
 {% block content %}
-<p>content</p>
-
+{% for ship in ships %}
+<a href="{{ ship.id }}" class="ship">{{ship.name}}</a>
+{% endfor %}
 {% endblock %}
