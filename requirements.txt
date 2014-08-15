@@ -2,3 +2,4 @@ Django==1.6.5
 beautifulscraper==1.0.2
 beautifulsoup4==4.3.2
 requests==2.3.0
+selenium==2.42.1
