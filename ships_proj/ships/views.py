@@ -3,7 +3,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse('works')
+    return render(request, 'ships/ships.html')
 
 def other(request):
     return HttpResponse('also works')

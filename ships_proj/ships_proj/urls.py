@@ -9,5 +9,5 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
     # url(r'^$', 'ships.views.index', name='home'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^ships/', include('ships.urls')),
+    url(r'^', include('ships.urls')),
 )
