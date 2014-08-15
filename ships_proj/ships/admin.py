@@ -26,4 +26,8 @@ class ShipAdmin(admin.ModelAdmin):
 
 admin.site.register(Ship, ShipAdmin)
 
-# Register your models here.
+
+class PeopleAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(People, PeopleAdmin)

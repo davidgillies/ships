@@ -66,3 +66,12 @@ class Ship(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class People(models.Model):
+    name = models.CharField(max_length=100)
+    biog = models.TextField(blank=True)
+    birth_year = models.CharField(max_length=4)
+    nationality = models.CharField(max_length=50)
+    ships = models.ManyToManyField(Ship, blank=True, null=True)
+
