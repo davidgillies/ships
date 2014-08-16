@@ -1,14 +1,12 @@
 from django.db import models
 
-# Create your models here.
-
 
 class Company(models.Model):
     name = models.CharField(max_length=100)
 
 
 class Builder(Company):
-    nationality = models.CharField(max_length=20)    
+    nationality = models.CharField(max_length=20)
 
 
 class Owner(Company):
@@ -19,6 +17,7 @@ class Link(models.Model):
     link = models.URLField(max_length=200)
     title = models.CharField(max_length=100)
     desc = models.TextField(blank=True)
+
 
 class OtherName(models.Model):
     name = models.CharField(max_length=50)
@@ -38,11 +37,11 @@ class Ship(models.Model):
         ('sa', 'Sail')
     }
 
-
-    
     name = models.CharField(max_length=40)
-    ship_type= models.CharField(max_length=10, choices=SHIP_TYPE_CHOICES, blank=True)
-    drive_type = models.CharField(max_length=2, choices=DRIVE_TYPE_CHOICES, blank=True)
+    ship_type = models.CharField(max_length=10,
+                                 choices=SHIP_TYPE_CHOICES, blank=True)
+    drive_type = models.CharField(max_length=2,
+                                  choices=DRIVE_TYPE_CHOICES, blank=True)
     yard_no = models.CharField(max_length=6, blank=True)
     build_year = models.CharField(max_length=4, blank=True)
     built_for = models.CharField(max_length=100, blank=True)
@@ -53,13 +52,13 @@ class Ship(models.Model):
     previous_owners = models.ForeignKey(Owner, blank=True, null=True)
     history = models.TextField(blank=True)
     links = models.ForeignKey(Link, blank=True, null=True)
-    other_names=models.ForeignKey(OtherName, blank=True, null=True)
+    other_names = models.ForeignKey(OtherName, blank=True, null=True)
 
     def is_active():
         pass
 
     def is_wreck():
-        pass 
+        pass
 
     def __unicode__(self):
         return self.name
@@ -74,4 +73,3 @@ class People(models.Model):
     birth_year = models.CharField(max_length=4)
     nationality = models.CharField(max_length=50)
     ships = models.ManyToManyField(Ship, blank=True, null=True)
-
