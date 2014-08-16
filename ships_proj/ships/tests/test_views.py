@@ -16,3 +16,10 @@ class ShipIndexTest(TestCase):
         response = self.client.get('/')
         self.assertContains(response, 'Cutty Sark')
 
+class ShipDetailView(TestCase):
+
+    def test_detail_view_uses_correct_template(self):
+        ship = Ship.objects.create(name='Cutty Sark',
+                            yard_no='46', build_year='1867', history='torched')
+        response = self.client.get('/%d/' % ship.id)
+        self.assertTemplateUsed(response, 'ships/ship_detail.html')

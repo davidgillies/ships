@@ -16,3 +16,8 @@ class Index(generic.ListView):
 def other(request):
     return HttpResponse('also works')
 
+class ShipDetailView(generic.DetailView):
+    model = Ship
+    context_object_name = 'ship'
+    template_name = 'ships/ship_detail.html'
+
