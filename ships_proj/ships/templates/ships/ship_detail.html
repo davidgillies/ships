@@ -1,0 +1,31 @@
+{% extends 'ships/base.html' %}
+{% block content %}
+
+<h1>{{ship.name}}</h1>
+<p><label>Type:</label> {{ship.get_ship_type_display}}</p>
+<p><label>Drive:</label> {{ship.get_drive_type_display}}</p>
+<p><label>Yard No.</label> {{ship.yard_no}}</p>
+<p><label>Built:</label> {{ship.build_year}}</p>
+<p><label>For:</label> {{ship.built_for}}</p>
+<p><label>Length:</label> {{ship.length_in_feet}}</p>
+<p><label>Breadth:</label> {{ship.breadth_in_feet}}</p>
+<p><label>Draft:</label> {{ship.draft_in_feet}}</p>
+<p><label>Status:</label> {{ship.status}}</p>
+<p><label>Previous Owners</label> 
+{% for owner in ship.previous_owners %}
+{{owner.name}} 
+{% endfor %}
+</p>
+<p><label>History:</label> {{ship.history}}</p>
+</p>
+<p><label>Other Names</label> 
+{% for name in ship.other_names.all %}
+{{name.name}} 
+{% endfor %}
+</p>
+<p><label>Links</label>
+{% for link in ship.links.all %}
+{{link.link}}
+{% endfor %}
+</p>
+{% endblock %}
