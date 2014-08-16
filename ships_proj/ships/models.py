@@ -66,6 +66,7 @@ class Ship(models.Model):
     breadth_in_feet = models.IntegerField(blank=True, default=0)
     draft_in_feet = models.IntegerField(blank=True, default=0)
     status = models.CharField(max_length=100, blank=True)
+    builder = models.ForeignKey(Builder, blank=True, null=True)
     previous_owners = models.ManyToManyField(Owner, blank=True, null=True)
     history = models.TextField(blank=True)
     links = models.ManyToManyField(Link, blank=True, null=True)
