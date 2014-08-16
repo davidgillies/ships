@@ -12,7 +12,7 @@
 <p><label>Draft:</label> {{ship.draft_in_feet}}</p>
 <p><label>Status:</label> {{ship.status}}</p>
 <p><label>Previous Owners</label> 
-{% for owner in ship.previous_owners %}
+{% for owner in ship.previous_owners.all %}
 {{owner.name}} 
 {% endfor %}
 </p>
