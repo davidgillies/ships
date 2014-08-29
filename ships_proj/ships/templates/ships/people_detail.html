@@ -1,0 +1,15 @@
+{% extends 'ships/base.html' %}
+{% block content %}
+
+<h1>{{object.name}}</h1>
+<p><label>Biog:</label> {{object.biog}}</p>
+<p><label>Born:</label> {{object.birth_year}}</p>
+<p><label>Nationality:</label> {{object.nationality}}</p>
+<p><label>Ships:</label> 
+{% for ship in object.ships.all %}
+{{ship.name}} 
+{% endfor %}
+</p>
+
+
+{% endblock %}

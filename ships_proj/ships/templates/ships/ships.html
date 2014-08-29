@@ -8,6 +8,6 @@
 <br/>
 
 {% for person in ships.people %}
-<a href="{{ person.id }}" class="person">{{person.name}}</a>
+<a href="/people/{{ person.id }}" class="person">{{person.name}}</a>
 {% endfor %}
 {% endblock %}
