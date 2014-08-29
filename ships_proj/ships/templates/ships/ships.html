@@ -4,4 +4,7 @@
 {% for ship in ships %}
 <a href="{{ ship.id }}" class="ship">{{ship.name}}</a>
 {% endfor %}
+{% for person in people %}
+<a href="{{ person.id }}" class="person">{{person.name}}</a>
+{% endfor %}
 {% endblock %}

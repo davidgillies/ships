@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from ships.models import Ship
+from ships.models import Ship, People
 from django.views import generic
 from django.core.urlresolvers import reverse_lazy
 
@@ -35,3 +35,21 @@ class ShipDeleteView(generic.DeleteView):
     model = Ship
     success_url = reverse_lazy('index')
 
+
+class PeopleDetailView(generic.DetailView):
+    model = People
+
+
+class PeopleCreateView(generic.CreateView):
+    model = People
+    success_url = reverse_lazy('index')
+
+
+class PeopleUpdateView(generic.UpdateView):
+    model = People
+    success_url = reverse_lazy('index')
+
+
+class PeopleDeleteView(generic.DeleteView):
+    model = People
+    success_url = reverse_lazy('index')
