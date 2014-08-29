@@ -13,10 +13,6 @@ class Index(generic.ListView):
     context_object_name = 'ships'
     template_name =  'ships/ships.html'
     
-    def get_context_data(self, **kwargs):
-        context = super(Index, self).get_context_data(**kwargs)
-        context['people'] = People.objects.all()
-        return context
 
 def other(request):
     return HttpResponse('also works')
