@@ -1,10 +1,13 @@
 {% extends 'ships/base.html' %}
 
 {% block content %}
-{% for ship in ships %}
+{% for ship in ships.ships %}
 <a href="{{ ship.id }}" class="ship">{{ship.name}}</a>
 {% endfor %}
-{% for person in people %}
+<br/>
+<br/>
+
+{% for person in ships.people %}
 <a href="{{ person.id }}" class="person">{{person.name}}</a>
 {% endfor %}
 {% endblock %}

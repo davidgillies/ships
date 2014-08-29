@@ -6,10 +6,17 @@ from django.core.urlresolvers import reverse_lazy
 
 
 class Index(generic.ListView):
-    model = Ship
+#    model = Ship
+    queryset = {}
+    queryset['ships'] = Ship.objects.all()
+    queryset['people'] = People.objects.all()
     context_object_name = 'ships'
     template_name =  'ships/ships.html'
-
+    
+    def get_context_data(self, **kwargs):
+        context = super(Index, self).get_context_data(**kwargs)
+        context['people'] = People.objects.all()
+        return context
 
 def other(request):
     return HttpResponse('also works')
