@@ -13,7 +13,7 @@ class Company(models.Model):
 
 class Builder(Company):
     nationality = models.CharField(max_length=20)
-
+    
 
 class Owner(Company):
     business = models.CharField(max_length=100, blank=True)
@@ -39,6 +39,7 @@ class OtherName(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Ship(models.Model):
     SHIP_TYPE_CHOICES = {
@@ -88,8 +89,8 @@ class Ship(models.Model):
 class People(models.Model):
     name = models.CharField(max_length=100)
     biog = models.TextField(blank=True)
-    birth_year = models.CharField(max_length=4)
-    nationality = models.CharField(max_length=50)
+    birth_year = models.CharField(max_length=4, blank=True)
+    nationality = models.CharField(max_length=50, blank=True)
     ships = models.ManyToManyField(Ship, blank=True, null=True)
 
     def __unicode__(self):
@@ -97,3 +98,4 @@ class People(models.Model):
 
     def __str__(self):
         return self.name
+
