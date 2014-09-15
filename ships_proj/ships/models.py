@@ -2,7 +2,10 @@ from django.db import models
 
 
 class Company(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, blank=True)
+    founded = models.CharField(max_length=10, blank=True)
+    years_operating = models.CharField(max_length=15, blank=True)
+    notes = models.TextField(blank=True)
 
     def __unicode__(self):
         return self.name
@@ -12,8 +15,8 @@ class Company(models.Model):
 
 
 class Builder(Company):
-    nationality = models.CharField(max_length=20)
-    
+    nationality = models.CharField(max_length=20, blank=True)
+    location = models.CharField(max_length=50, blank=True)
 
 class Owner(Company):
     business = models.CharField(max_length=100, blank=True)

@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from ships.models import Ship, People
+from ships.models import Ship, People, Builder
 from django.views import generic
 from django.core.urlresolvers import reverse_lazy
 
 
 class Index(generic.ListView):
-#    model = Ship
+    model = Ship
     queryset = {}
     queryset['ships'] = Ship.objects.all()
     queryset['people'] = People.objects.all()
@@ -55,4 +55,22 @@ class PeopleUpdateView(generic.UpdateView):
 
 class PeopleDeleteView(generic.DeleteView):
     model = People
+    success_url = reverse_lazy('index')
+
+class BuilderDetailView(generic.DetailView):
+    model = Builder
+
+
+class BuilderCreateView(generic.CreateView):
+    model = Builder
+    success_url = reverse_lazy('index')
+
+
+class BuilderUpdateView(generic.UpdateView):
+    model = Builder
+    success_url = reverse_lazy('index')
+
+
+class BuilderDeleteView(generic.DeleteView):
+    model = Builder
     success_url = reverse_lazy('index')
