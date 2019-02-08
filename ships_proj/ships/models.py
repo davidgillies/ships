@@ -75,12 +75,8 @@ class Ship(models.Model):
     history = models.TextField(blank=True)
     links = models.ManyToManyField(Link, blank=True, null=True)
     other_names = models.ManyToManyField(OtherName, blank=True, null=True)
-
-    def is_active():
-        pass
-
-    def is_wreck():
-        pass
+    active = models.BooleanField(default=True)
+    wreck = models.BooleanField(default=False)
 
     def __unicode__(self):
         return self.name
