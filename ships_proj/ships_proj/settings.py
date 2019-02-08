@@ -66,14 +66,7 @@ DATABASES = {
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
         'APP_DIRS': True,
-        'OPTIONS': {
-            [
-                'django.contrib.auth.context_processors.auth',
-                'django.template.context_processors.request',
-            ],
-        },
     },
 ]
 
